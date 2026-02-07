@@ -332,7 +332,7 @@ export default function Cart() {
                               {/* Price */}
                               <div className="text-right ml-4">
                                 <p className="text-2xl font-bold text-gray-900">
-                                  $
+                                  ₹
                                   {item?.product?.discountPrice
                                     ? item?.product?.discountPrice
                                     : Math.round(
@@ -343,7 +343,7 @@ export default function Cart() {
                                 </p>
                                 {item?.product?.discountPercentage > 0 && (
                                   <p className="mt-1 text-sm text-gray-500 line-through">
-                                    ${item?.product?.price}
+                                    ₹{item?.product?.price}
                                   </p>
                                 )}
                               </div>
@@ -379,8 +379,8 @@ export default function Cart() {
 
                               <div className="flex items-center space-x-4">
                                 <p className="text-lg font-semibold text-gray-900">
-                                  Subtotal: $
-                                  {(item?.product?.discountPrice
+                              Subtotal: 
+                                  ₹{(item?.product?.discountPrice
                                     ? item?.product?.discountPrice
                                     : Math.round(
                                         item?.product?.price *
@@ -432,7 +432,7 @@ export default function Cart() {
                   <div className="flex justify-between items-center pb-4 border-b border-gray-200">
                     <span className="text-gray-600">Subtotal</span>
                     <span className="text-lg font-semibold text-gray-900">
-                      ${totalAmount.toFixed(2)}
+                      ₹{totalAmount.toFixed(2)}
                     </span>
                   </div>
 
@@ -458,7 +458,7 @@ export default function Cart() {
                   <div className="flex justify-between items-center pt-4 border-t-2 border-gray-300">
                     <span className="text-xl font-bold text-gray-900">Total</span>
                     <span className="text-2xl font-bold text-indigo-600">
-                      ${totalAmount.toFixed(2)}
+                      ₹{totalAmount.toFixed(2)}
                     </span>
                   </div>
 
@@ -506,7 +506,7 @@ export default function Cart() {
                     </svg>
                     <div>
                       <p className="text-sm font-medium text-gray-900">Free Shipping</p>
-                      <p className="text-xs text-gray-500">On orders over $50</p>
+                      <p className="text-xs text-gray-500">On orders over ₹499</p>
                     </div>
                   </div>
                   <div className="flex items-start">

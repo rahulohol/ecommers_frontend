@@ -573,9 +573,9 @@ function NavBar({ children }) {
 
  const [showModal, setShowModal] = useState(false);
   const [location, setLocation] = useState({
-    city: "Pune",
-    pincode: "411045",
-  });
+  city: "",
+  pincode: "",
+});
 
   // Persist location (Amazon-like)
   useEffect(() => {

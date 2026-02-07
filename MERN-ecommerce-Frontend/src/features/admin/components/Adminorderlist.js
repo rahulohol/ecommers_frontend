@@ -767,8 +767,9 @@ import {
   selectOrderError,
   setFilters,
 } from "../../order/OrderSlice";
-import { toast } from "react-toastify";
-// import ToastAlert from "../../auth/components/ToastAlert";
+// import { toast } from "react-toastify";
+// import {toast}Alert from "../../auth/components/ToastAlert";
+import { toast } from "sonner";
 
 // Convert USD to INR
 function formatINRR(usdPrice) {

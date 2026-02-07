@@ -12,7 +12,7 @@
 // // import { useParams } from "react-router-dom";
 // // import { useEffect, useState } from "react";
 // // import Modal from "../../common/Modal";
-// // import { useAlert } from "react-alert";
+
 
 // // function ProductForm() {
 // //   const {
@@ -1033,12 +1033,13 @@ import {
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useAlert } from 'react-alert';
+// import { useAlert } from 'react-alert';
+import {toast} from 'sonner';
 
 function CreateProduct() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const alert = useAlert();
+  // const toast = usetoast();
 
   const brands = useSelector(selectBrands);
   const categories = useSelector(selectCategories);
@@ -1161,11 +1162,11 @@ function CreateProduct() {
       };
 
       await dispatch(createProductAsync(product)).unwrap();
-      alert.success('Product created successfully');
+      toast.success('Product created successfully');
       reset();
       navigate('/admin');
     } catch (error) {
-      alert.error(error?.message || 'Failed to create product');
+      toast.error(error?.message || 'Failed to create product');
     } finally {
       setIsSubmitting(false);
     }

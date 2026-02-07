@@ -1859,8 +1859,9 @@ import {
 import { useParams } from "react-router-dom";
 import { addToCartAsync, selectItems } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
-import { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import { Grid } from "react-loader-spinner";
+import {toast} from "sonner"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -1879,7 +1880,7 @@ export default function ProductDetail() {
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
-  const alert = useAlert();
+  // const alert = useAlert();
   const status = useSelector(selectProductListStatus);
 
   const [activeImg, setActiveImage] = useState(null);
@@ -1899,9 +1900,10 @@ export default function ProductDetail() {
       if (selectedSize) {
         newItem.size = selectedSize;
       }
-      dispatch(addToCartAsync({ item: newItem, alert }));
+      dispatch(addToCartAsync({ item: newItem }));
+      toast.success("Item added to cart");
     } else {
-      alert.error("Item Already added");
+      toast.error("Item Already added");
     }
   };
 
@@ -2227,8 +2229,8 @@ export default function ProductDetail() {
                 <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl border border-slate-200">
                   <div className="flex items-baseline gap-3">
                     <span className="price-tag text-5xl font-bold">
-                     { 
-                     "₹" + 
+                    ₹{ 
+                       
                         product?.discountPrice ||
                         Math.round(
                           product?.price * (1 - product?.discountPercentage / 100)

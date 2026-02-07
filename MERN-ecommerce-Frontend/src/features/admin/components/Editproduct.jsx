@@ -14,13 +14,14 @@ import { useForm } from 'react-hook-form';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Modal from '../../common/Modal';
-import { useAlert } from 'react-alert';
+import {toast} from 'sonner';
+
 
 function EditProduct() {
   const dispatch = useDispatch();
   const params = useParams();
   const navigate = useNavigate();
-  const alert = useAlert();
+  // const toast = usetoast();
 
   const brands = useSelector(selectBrands);
   const categories = useSelector(selectCategories);
@@ -201,10 +202,10 @@ function EditProduct() {
       };
 
       await dispatch(updateProductAsync(product)).unwrap();
-      alert.success('Product updated successfully');
+      toast.success('Product updated successfully');
       navigate('/admin');
     } catch (error) {
-      alert.error(error?.message || 'Failed to update product');
+      toast.error(error?.message || 'Failed to update product');
     } finally {
       setIsSubmitting(false);
     }
@@ -213,11 +214,11 @@ function EditProduct() {
   const handleDelete = async () => {
     try {
       await dispatch(updateProductAsync({ ...selectedProduct, id: params.id, deleted: true })).unwrap();
-      alert.success('Product deleted successfully');
+      toast.success('Product deleted successfully');
       setOpenModal(false);
       navigate('/admin');
     } catch (error) {
-      alert.error('Failed to delete product');
+      toast.error('Failed to delete product');
     }
   };
 

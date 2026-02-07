@@ -13,6 +13,7 @@ import {
 } from '../Searchslice';
 import { StarIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { FunnelIcon } from '@heroicons/react/24/outline';
+import NavBar from '../../navbar/Navbar';
 
 // Convert USD to INR
 function formatINRR(usdPrice) {
@@ -208,6 +209,7 @@ export default function SearchResults() {
   }
 
   return (
+    <NavBar>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Search Header */}
@@ -305,5 +307,6 @@ export default function SearchResults() {
         )}
       </div>
     </div>
+    </NavBar>
   );
 }

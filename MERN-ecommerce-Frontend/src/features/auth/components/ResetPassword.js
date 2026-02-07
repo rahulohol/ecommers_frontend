@@ -6,11 +6,12 @@ import {
   selectError,
   selectPasswordReset,
 } from "../authSlice";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
-import ToastAlert from "./ToastAlert";
-import { useAlert } from "react-alert";
+// import {toast}Alert from "./ToastAlert";
+// import { useAlert } from "react-alert";
+import {toast} from 'sonner';
 
 export default function ResetPassword() {
   const passwordReset = useSelector(selectPasswordReset);
@@ -23,7 +24,7 @@ export default function ResetPassword() {
   const [redirectToLogin, setRedirectToLogin] = useState(false);
 
   const navigate = useNavigate();
-  const alert = useAlert();
+  // const alert = useAlert();
 
   const dispatch = useDispatch();
   const {
@@ -45,13 +46,7 @@ export default function ResetPassword() {
     if (passwordReset) {
       setShowSuccessAlert(true); // Display the success alert when passwordReset changes to true
 
-      alert.show("Password has reset successfully", {
-        timeout: 4000, // custom timeout just for this one alert
-        type: "success",
-        position: "top right",
-        onOpen: () => {}, // callback that will be executed after this alert open
-        onClose: () => {}, // callback that will be executed after this alert is removed
-      });
+      toast.success("Password has reset successfully");
       navigate("/login");
     }
   }, [passwordReset]);
@@ -182,7 +177,7 @@ export default function ResetPassword() {
                     />
                   )} */}
 
-                  {showSuccessAlert && (
+                  {/* {showSuccessAlert && (
                     <div className="fixed top-0 right-0 transform transition-transform duration-300 ease-in-out">
                       <ToastAlert
                         message="Password Reset Successfully"
@@ -190,7 +185,7 @@ export default function ResetPassword() {
                         onClose={() => setShowSuccessAlert(false)}
                       />
                     </div>
-                  )}
+                  )} */}
 
                   {error && <p className="text-red-500">{error}</p>}
                 </div>

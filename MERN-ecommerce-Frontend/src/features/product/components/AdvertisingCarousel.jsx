@@ -187,7 +187,7 @@ export default function AdvertisingCarousel() {
             aria-label={`Go to slide ${index + 1}`}
           >
             <div
-              className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${
+              className={`h-2 sm:h-2.5 rounded-full sm:rounded-md transition-all duration-300 ${
                 index === currentSlide
                   ? "bg-white shadow-lg shadow-white/50"
                   : "bg-white/40 hover:bg-white/70 group-hover/dot:scale-110"
