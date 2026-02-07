@@ -1360,6 +1360,12 @@ import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { updateUserAsync } from "../features/user/Usermanagementslice";
 import { useState } from "react";
+// import {
+//   createOrderAsync,
+//   selectCurrentOrder,
+//   selectOrderStatus 
+// } from "../features/order/OrderSlice";
+
 import {
   createOrderAsync,
   selectCurrentOrder,
@@ -1367,6 +1373,7 @@ import {
 } from "../features/order/OrderSlice";
 import { selectUserInfo } from "../features/user/Usermanagementslice";
 import { Grid } from "react-loader-spinner";
+import { toast } from "sonner";
 
 // Convert USD to INR
 function formatINRR(usdPrice) {
@@ -1465,7 +1472,7 @@ function Checkout() {
       // 🔵 CARD → RAZORPAY
       const res = await loadRazorpay();
       if (!res) {
-        alert("Razorpay SDK failed to load. Please try again.");
+        toast("Razorpay SDK failed to load. Please try again.");
         setOrderError(true);
         return;
       }
@@ -1481,6 +1488,7 @@ function Checkout() {
       );
 
       if (!razorpayOrderRes.ok) {
+        toast(razorpayOrderRes?.statusText || "Failed to create Razorpay order");
         throw new Error("Failed to create Razorpay order");
       }
 
@@ -1509,7 +1517,7 @@ function Checkout() {
 
             const verifyData = await verifyRes.json();
             if (!verifyData.success) {
-              alert("Payment verification failed");
+              toast.error("Payment verification failed");
               setOrderError(true);
               return;
             }
@@ -1533,6 +1541,7 @@ function Checkout() {
               setOrderError(true);
             }
           } catch (error) {
+            toast.error(error?.message || "An error occurred during payment processing");
             console.error("Error in payment handler:", error);
             setOrderError(true);
           }
@@ -1540,6 +1549,7 @@ function Checkout() {
 
         modal: {
           ondismiss: function () {
+            toast("Payment was cancelled by the user");
             console.log("Payment cancelled by user");
           },
         },
@@ -1558,7 +1568,7 @@ function Checkout() {
     } catch (error) {
       console.error("Error in handleOrder:", error);
       setOrderError(true);
-      alert("An error occurred. Please try again.");
+      toast.error("An error occurred. Please try again.");
     }
   };
 
