@@ -171,7 +171,7 @@ import {
 } from "../Usermanagementslice";
 import { Grid } from "react-loader-spinner";
 import { Navigate, useNavigate } from "react-router-dom";
-import { fetchLoggedInUserOrdersAsync, selectOrders } from "../../order/OrderSlice";
+import { fetchLoggedInUserOrdersAsync, selectOrders } from "../../order/orderSlice";
 
 // Convert USD to INR
 function formatINRR(usdPrice) {

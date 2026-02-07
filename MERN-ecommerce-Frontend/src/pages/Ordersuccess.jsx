@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCartAsync } from "../features/cart/cartSlice";
 import { selectLoggedInUser } from "../features/auth/authSlice";
-import { resetOrder } from "../features/order/OrderSlice";
+import { resetOrder } from "../features/order/orderSlice";
 import NavBar from "../features/navbar/Navbar";
 
 // Convert USD to INR

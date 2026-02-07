@@ -386,7 +386,7 @@
 //   selectTotalOrders,
 //   selectOrderError,
 //   setFilters,
-// } from "../../order/OrderSlice";
+// } from "../../order/orderSlice";
 
 // // Convert USD to INR
 // function formatINRR(usdPrice) {
@@ -766,7 +766,7 @@ import {
   selectTotalOrders,
   selectOrderError,
   setFilters,
-} from "../../order/OrderSlice";
+} from "../../order/orderSlice";
 // import { toast } from "react-toastify";
 // import {toast}Alert from "../../auth/components/ToastAlert";
 import { toast } from "sonner";

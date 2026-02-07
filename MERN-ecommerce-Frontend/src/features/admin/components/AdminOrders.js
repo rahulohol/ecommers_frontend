@@ -6,7 +6,7 @@
 //   selectOrders,
 //   selectTotalOrders,
 //   updateOrderAsync,
-// } from "../../order/OrderSlice";
+// } from "../../order/orderSlice";
 // import {
 //   PencilIcon,
 //   EyeIcon,

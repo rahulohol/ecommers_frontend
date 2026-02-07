@@ -439,7 +439,7 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateOrderAsync } from "../../order/OrderSlice";
+import { updateOrderAsync } from "../../order/orderSlice";
 
 // Convert USD to INR
 function formatINRR(usdPrice) {

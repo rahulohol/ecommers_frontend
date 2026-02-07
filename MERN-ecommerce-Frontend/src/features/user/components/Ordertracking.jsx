@@ -1,7 +1,7 @@
 // import React, { useEffect, useState } from "react";
 // import { useParams, Link } from "react-router-dom";
 // import { useSelector, useDispatch } from "react-redux";
-// import { fetchOrderByIdAsync, selectOrderById, selectOrderStatus } from "../../order/OrderSlice";
+// import { fetchOrderByIdAsync, selectOrderById, selectOrderStatus } from "../../order/orderSlice";
 // import { Grid } from "react-loader-spinner";
 
 // // Convert USD to INR
@@ -507,7 +507,7 @@ import {
   fetchOrderByIdAsync, 
   selectCurrentOrder,  // ← Changed from selectOrderById
   selectOrderStatus 
-} from "../../order/OrderSlice";
+} from "../../order/orderSlice";
 import { Grid } from "react-loader-spinner";
 
 // Convert USD to INR
