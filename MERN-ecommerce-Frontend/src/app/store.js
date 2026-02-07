@@ -2,8 +2,11 @@ import { configureStore, createReducer } from '@reduxjs/toolkit';
 import productReducer from '../features/product/productSlice';
 import authReducer from '../features/auth/authSlice';
 import cartReducer from '../features/cart/cartSlice';
-import orderReducer from '../features/order/orderSlice';
-import userReducer from '../features/user/userSlice';
+import orderReducer from '../features/order/OrderSlice';
+import userReducer from '../features/user/Usermanagementslice';
+import searchReducer from '../features/product/Searchslice';
+import userManagementReducer from '../features/user/Usermanagementslice';
+// import { Usermanagementslice } from '../features/user/Usermanagementslice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +14,7 @@ export const store = configureStore({
     auth: authReducer,
     cart: cartReducer,
     order: orderReducer,
-    user: userReducer,
+    userManagement: userManagementReducer,
+    search: searchReducer
   },
 });

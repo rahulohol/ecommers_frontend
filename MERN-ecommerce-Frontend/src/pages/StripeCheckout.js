@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import CheckoutForm from "./CheckoutForm";
 import "../Stripe.css";
-import { selectCurrentOrder } from "../features/order/orderSlice";
+import { selectCurrentOrder } from "../features/order/OrderSlice";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.

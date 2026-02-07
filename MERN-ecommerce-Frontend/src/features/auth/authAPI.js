@@ -6,22 +6,37 @@ const API = axios.create({
   baseURL: `${baseUrl}`,
 });
 
-API.interceptors.request.use((req) => {
-  if (localStorage.getItem("profile")) {
-    req.headers.Authorization = `Bearer ${
-      JSON.parse(localStorage.getItem("profile")).token
+// API.interceptors.request.use((req) => {
+//   if (localStorage.getItem("profile")) {
+//     req.headers.Authorization = `Bearer ${
+//       JSON.parse(localStorage.getItem("profile")).token
+//     }`;
+//   }
+//   return req;
+// });
+
+API.interceptors.request.use((config) => {
+  const profile = localStorage.getItem("profile");
+  if (profile) {
+    config.headers.Authorization = `Bearer ${
+      JSON.parse(profile).token
     }`;
   }
-  return req;
+  return config;
 });
 
 export const createUser = (formData, config) =>
   API.post(`/auth/signup`, formData, config);
 
 export function loginUser(loginInfo) {
+  try
+    {
   return API.post("/auth/login", loginInfo, {
     headers: { "Content-Type": "application/json" },
-  });
+  })} catch (error) {
+    console.error("Login error:", error);
+    throw error;
+}
 }
 
 export function checkAuth() {

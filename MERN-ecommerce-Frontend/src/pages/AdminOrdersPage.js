@@ -1,11 +1,12 @@
-import AdminOrders from "../features/admin/components/AdminOrders";
+import AdminOrderList from "../features/admin/components/Adminorderlist";
+// import AdminOrders from "../features/admin/components/AdminOrders";
 import NavBar from "../features/navbar/Navbar";
 
 function AdminOrdersPage() {
     return ( 
         <div>
             <NavBar>
-                <AdminOrders></AdminOrders>
+                <AdminOrderList></AdminOrderList>
             </NavBar>
         </div>
      );

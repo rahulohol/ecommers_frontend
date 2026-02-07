@@ -107,18 +107,20 @@ export const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(loginUserAsync.pending, (state) => {
+        console.log("Login pending...");
         state.status = "loading";
       })
       .addCase(loginUserAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        state.loggedInUserToken = action.payload;
+        state.loggedInUserToken = action?.payload;
 
         localStorage.setItem("profile", JSON.stringify({ ...action.payload }));
-        state.user = action.payload;
+        state.user = action?.payload;
       })
       .addCase(loginUserAsync.rejected, (state, action) => {
+        console.error("Login failed:", action.payload);
         state.status = "idle";
-        state.error = action.payload;
+        state.error = action.payload.message || "Login failed. Please try again.";
       })
       .addCase(signOutAsync.pending, (state) => {
         state.status = "loading";

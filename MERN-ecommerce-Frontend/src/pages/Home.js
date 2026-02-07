@@ -9,7 +9,7 @@ function Home() {
             <NavBar>
                 <ProductList></ProductList>
             </NavBar>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
      );
 }

@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { resetCartAsync } from "../features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../features/auth/authSlice";
-import { resetOrder } from "../features/order/orderSlice";
+import { resetOrder } from "../features/order/OrderSlice";
 import NavBar from "../features/navbar/Navbar";
 
 function OrderSuccessPage() {
