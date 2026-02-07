@@ -11,7 +11,7 @@ import {
   addTrackingUpdate,
   getTrackingHistory,
   updatePaymentStatus,
-} from "./Orderapi";
+} from "./orderAPI";
 
 const initialState = {
   orders: [],
