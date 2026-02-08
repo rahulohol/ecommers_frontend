@@ -247,7 +247,7 @@ export default function Login() {
             </div>
 
             {/* Form Header */}
-            <div>
+            <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900">
                 Welcome Back
               </h2>
@@ -263,7 +263,7 @@ export default function Login() {
                 let loginInfo = { email: data.email, password: data.password };
                 dispatch(loginUserAsync({ loginInfo, Navigater }));
               })}
-              className="space-y-4"
+              className="space-y-4 m-auto"
             >
               {/* Email Field */}
               <div>

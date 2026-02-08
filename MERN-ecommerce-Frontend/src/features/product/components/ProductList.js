@@ -1301,7 +1301,7 @@ export default function ProductList() {
 
         <main className="mx-auto max-w-7xl">
           {/* Hero Carousel Section */}
-          <div className="px-3 sm:px-6 lg:px-8 pt-4 sm:pt-4 pb-0">
+          <div className="px-0 sm:px-0 lg:px-0 pt-0 sm:pt-0 pb-0">
             <AdvertisingCarousel />
           </div>
 

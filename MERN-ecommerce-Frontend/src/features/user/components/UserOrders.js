@@ -184,6 +184,8 @@ export default function UserOrders() {
   const orders = useSelector(selectOrders);
   const status = useSelector(selectUserInfoStatus);
 
+  console.log("User Orders:", orders);
+
   useEffect(() => {
     dispatch(fetchLoggedInUserOrdersAsync());
   }, [dispatch]);
@@ -421,7 +423,7 @@ export default function UserOrders() {
         )}
 
         {/* Empty State */}
-        {!status === "loading" && (!orders || orders.length === 0) && (
+        { (!orders || orders.length === 0) && (
           <div className="empty-state text-center py-20">
             <div className="w-32 h-32 mx-auto mb-6 bg-slate-100 rounded-full flex items-center justify-center">
               <svg

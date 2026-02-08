@@ -906,7 +906,7 @@ export default function AdminOrderList() {
       <div className="admin-orders max-w-7xl mx-auto">
         {/* Header */}
         <div className="fade-in mb-8">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-wrap justify-between items-center">
             <div>
               <h1 className="text-4xl font-bold text-slate-900 mb-2">
                 Order Management

@@ -221,7 +221,7 @@ function Footer() {
             <h4 className="text-white font-semibold text-base">Stay in the loop</h4>
             <p className="text-gray-500 text-sm mt-1">Get weekly style tips & exclusive offers.</p>
           </div>
-          <div className="flex gap-2 w-full md:w-auto">
+          <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto ">
             <input
               type="email"
               value={email}
